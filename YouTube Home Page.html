@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>YouTube</title>
+
+    <link rel="icon" href="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png">
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        .navbar {
+            /* border: 2px solid black; */
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 25px;
+        }
+
+        .start {
+            /* border: 2px solid black; */
+            height: auto;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .triple-bar {
+            /* border: 2px solid black; */
+            height: 25px;
+            width: 25px;
+        }
+
+        #triple-bar-icon {
+            height: 25px;
+            width: 25px;
+        }
+
+        .triple-bar:hover {
+            background-color: rgb(208, 208, 208);
+        }
+
+        .youtube-logo {
+            /* border: 2px solid black; */
+            height: auto;
+            width: 100px;
+        }
+
+        #youtube-logo-icon {
+            height: auto;
+            width: 100px;
+        }
+
+        .search-box {
+            /* border: 2px solid black; */
+            display: flex;
+            align-items: center;
+            height: fit-content;
+            width: fit-content;
+            margin-left: 100px;
+        }
+
+        #search-bar {
+            border: 1px solid gray;
+            height: 40px;
+            width: 550px;
+            box-sizing: border-box;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            font-size: 17px;
+            padding: 15px;
+        }
+
+        #search-btn {
+            border: 1px solid gray;
+            border-left: none;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            height: 38px;
+            width: 60px;
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(245, 245, 245);
+        }
+
+        #search-icon {
+            height: 20px;
+            width: 20px;
+        }
+
+        #search-btn:hover {
+            background-color: rgb(238, 238, 238);
+        }
+
+        #audio-btn {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(235, 235, 235);
+        }
+
+        #audio-icon {
+            height: 20px;
+            width: 20px;
+        }
+
+        #audio-btn:hover {
+            background-color: rgb(208, 208, 208);
+        }
+
+        .end {
+            /* border: 2px solid black; */
+            height: 100%;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .three-dots {
+            /* border: 2px solid black; */
+            height: 25px;
+            width: 25px;
+        }
+
+        #three-dots-icon {
+            height: 25px;
+            width: 25px;
+        }
+
+        #three-dots:hover {
+            background-color: rgb(208, 208, 208);
+        }
+
+        .sign-in {
+            border: 1px solid gray;
+            border-radius: 50px;
+            height: 35px;
+            width: 100px;
+            color: blue;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+        }
+
+        #sing-in-icon {
+            border: 2px solid blue;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+        }
+
+        .sign-in:hover {
+            background-color: rgb(225, 245, 255);
+            border: none;
+        }
+
+        .main-body {
+            /* border: 2px solid red; */
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            display: flex;
+        }
+
+        .side-bar {
+            /* border: 2px solid green; */
+            box-sizing: border-box;
+            height: 90vh;
+            width: 20%;
+            font-size: 15px;
+            overflow: hidden;
+        }
+
+        .side-bar:hover {
+            overflow: auto;
+        }
+
+        .home {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #home-icon {
+            height: 50px;
+            width: 50px;
+        }
+
+        .home:hover {
+            background-color: rgb(225, 225, 225);
+        }
+
+        .shorts {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #shorts-icon {
+            height: 30px;
+            width: 30px;
+            margin-left: 10px;
+        }
+
+        .shorts:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .subscriptions {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #subscriptions-icon {
+            height: 25px;
+            width: 25px;
+            margin-left: 12px;
+        }
+
+        .subscriptions:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .library {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #library-icon {
+            height: 25px;
+            width: 25px;
+            margin-left: 10px;
+        }
+
+        .library:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .history {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #history-icon {
+            height: 25px;
+            width: 25px;
+            margin-left: 10px;
+        }
+
+        .history:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .explore {
+            /* border: 2px solid black; */
+            font-size: 17px;
+            font-weight: bold;
+            padding: 15px 0px 0px 20px;
+        }
+
+        .trending {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #trending-icon {
+            height: 20px;
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .trending:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .shopping {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #shopping-icon {
+            height: 20px;
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .shopping:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .music {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #music-icon {
+            height: 20px;
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .music:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .movies {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #movies-icon {
+            height: 20px;
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .movies:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .live {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #live-icon {
+            height: 15px;
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .live:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .gaming {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #gaming-icon {
+            height: 20px;
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .gaming:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .news {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #news-icon {
+            height: 25px;
+            width: 30px;
+            margin-left: 5px;
+        }
+
+        .news:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .sports {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #sports-icon {
+            height: 20px;
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .sports:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .learning {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #learning-icon {
+            height: 20px;
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .learning:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .fasion-beauty {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #fasion-beauty-icon {
+            height: 20px;
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .fasion-beauty:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .podcasts {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #podcasts-icon {
+            height: 20px;
+            width: 35px;
+            margin-left: 3px;
+        }
+
+        .podcasts:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .browse-channels {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 15px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #browse-channels-icon {
+            height: 20px;
+            width: 35px;
+            margin-left: 3px;
+        }
+
+        .browse-channels:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .morefromyt {
+            /* border: 2px solid black; */
+            font-size: 17px;
+            font-weight: bold;
+            padding: 15px 0px 0px 20px;
+        }
+
+        .youtube-premium {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #youtube-premium-icon {
+            height: 33px;
+            width: 33px;
+            margin-left: 3px;
+        }
+
+        .youtube-premium:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .youtube-music {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #youtube-music-icon {
+            height: 23px;
+            width: 23px;
+            margin-left: 6px;
+        }
+
+        .youtube-music:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .youtube-kids {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #youtube-kids-icon {
+            height: 33px;
+            width: 33px;
+            margin-left: 2px;
+        }
+
+        .youtube-kids:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .settings {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #settings-icon {
+            height: 20px;
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .settings:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .report-history {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #report-history-icon {
+            height: 20px;
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .report-history:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .help {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #help-icon {
+            height: 20px;
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .help:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .send-feedbak {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 40px;
+            width: 240;
+            margin: 0px 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #send-feedbak-icon {
+            height: 30px;
+            width: 25px;
+            margin-left: 5px;
+        }
+
+        .send-feedbak:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .links {
+            /* border: 2px solid black; */
+            box-sizing: border-box;
+            font-size: 13px;
+            padding: 15px 15px;
+        }
+
+        .body {
+            /* border: 2px solid blue; */
+            box-sizing: border-box;
+            height: 100%;
+            width: 80%;
+        }
+
+        .headlines {
+            /* border: 2px solid black; */
+            box-sizing: border-box;
+            height: auto;
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            align-items: center;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        #all {
+            /* border: 2px solid black; */
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            height: fit-content;
+            width: fit-content;
+            background-color: black;
+            color: white;
+        }
+
+        #thekapilsharmashow {
+            /* border: 2px solid black; */
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            height: fit-content;
+            width: fit-content;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #thekapilsharmashow:hover {
+            background-color: rgb(225, 225, 225);
+        }
+
+        #ayodhyarammandir {
+            /* border: 2px solid black; */
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            height: fit-content;
+            width: fit-content;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #ayodhyarammandir:hover {
+            background-color: rgb(225, 225, 225);
+        }
+
+        #johncenavsundertaker {
+            /* border: 2px solid black; */
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            height: fit-content;
+            width: fit-content;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #johncenavsundertaker:hover {
+            background-color: rgb(225, 225, 225);
+        }
+
+        #thenunIItrailer {
+            /* border: 2px solid black; */
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            height: fit-content;
+            width: fit-content;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #thenunIItrailer:hover {
+            background-color: rgb(225, 225, 225);
+        }
+
+        #bollywoodmovies {
+            /* border: 2px solid black; */
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            height: fit-content;
+            width: fit-content;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #bollywoodmovies:hover {
+            background-color: rgb(225, 225, 225);
+        }
+
+        #news {
+            /* border: 2px solid black; */
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            height: fit-content;
+            width: fit-content;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #news:hover {
+            background-color: rgb(225, 225, 225);
+        }
+
+        #sharktank {
+            border: 2px solid black;
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            height: fit-content;
+            width: fit-content;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #sharktank:hover {
+            background-color: rgb(225, 225, 225);
+        }
+
+        .youtube-videos {
+            /* border: 2px solid black; */
+            box-sizing: border-box;
+            height: 84vh;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 25px 0px 0px 0px;
+            overflow: auto;
+        }
+
+        .video {
+            /* border: 2px solid black; */
+            height: 270px;
+            width: 330px;
+        }
+
+        #details {
+            /* border: 2px solid black; */
+            height: auto;
+            width: auto;
+            display: flex;
+            align-items: top;
+            gap: 10px;
+            margin: 5px;
+        }
+
+        #channel-name:hover {
+            font-weight: bold;
+        }
+
+        #thumbnail-1 {
+            /* border: 2px solid black; */
+            border-radius: 15px;
+            height: 75%;
+            background-color: black;
+            background-image: url("https://img.youtube.com/vi/F_sZTLoTQik/sddefault.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .logo#logo-1:hover {
+            height: 50px;
+            width: 50px;
+        }
+
+        #logo-1 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+        }
+
+        #thumbnail-2 {
+            /* border: 2px solid black; */
+            border-radius: 15px;
+            height: 75%;
+            background-color: black;
+            background-image: url("https://i3.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .logo#logo-2:hover {
+            height: 50px;
+            width: 50px;
+        }
+
+        #logo-2 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+        }
+
+        #thumbnail-3 {
+            /* border: 2px solid black; */
+            border-radius: 15px;
+            height: 75%;
+            background-color: black;
+            background-image: url("https://img.youtube.com/vi/jzYxbnHHhY4/maxresdefault.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .logo#logo-3:hover {
+            height: 50px;
+            width: 50px;
+        }
+
+        #logo-3 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+        }
+
+        #thumbnail-4 {
+            /* border: 2px solid black; */
+            border-radius: 15px;
+            height: 75%;
+            background-color: black;
+            background-image: url("https://img.theweek.in/content/dam/week/review/movies/images/2023/10/27/12-fail.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .logo#logo-4:hover {
+            height: 50px;
+            width: 50px;
+        }
+
+        #logo-4 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+        }
+
+        #thumbnail-5 {
+            /* border: 2px solid black; */
+            border-radius: 15px;
+            height: 75%;
+            background-color: black;
+            background-image: url("https://img.youtube.com/vi/kA2kT-TFXM8/maxresdefault.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .logo#logo-5:hover {
+            height: 50px;
+            width: 50px;
+        }
+
+        #logo-5 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+        }
+
+        #thumbnail-6 {
+            /* border: 2px solid black; */
+            border-radius: 15px;
+            height: 75%;
+            background-color: black;
+            background-image: url("https://img.youtube.com/vi/0n7Hv2WApT0/sddefault.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .logo#logo-6:hover {
+            height: 50px;
+            width: 50px;
+        }
+
+        #logo-6 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+        }
+
+        #thumbnail-7 {
+            /* border: 2px solid black; */
+            border-radius: 15px;
+            height: 75%;
+            background-color: black;
+            background-image: url("https://img.youtube.com/vi/tm24mst63f8/maxresdefault.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .logo#logo-7:hover {
+            height: 50px;
+            width: 50px;
+        }
+
+        #logo-7 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+        }
+
+        #thumbnail-8 {
+            /* border: 2px solid black; */
+            border-radius: 15px;
+            height: 75%;
+            background-color: black;
+            background-image: url("https://img.youtube.com/vi/J4aRcs66Nlo/maxresdefault.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .logo#logo-8:hover {
+            height: 50px;
+            width: 50px;
+        }
+
+        #logo-8 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+        }
+
+        #thumbnail-9 {
+            /* border: 2px solid black; */
+            border-radius: 15px;
+            height: 75%;
+            background-color: black;
+            background-image: url("https://img.youtube.com/vi/es2krnRZ2Ko/maxresdefault.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .logo#logo-9:hover {
+            height: 50px;
+            width: 50px;
+        }
+
+        #logo-9 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+        }
+
+        .youtube-shorts {
+            /* border: 2px solid black; */
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .info {
+            /* border: 2px solid red; */
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .info-1 {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .short-1 {
+            /* border: 2px solid black; */
+            height: 100%;
+            width: 200px;
+        }
+
+        .short-thumbnail-1 {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 350px;
+            width: auto;
+            background-image: url("https://img.youtube.com/vi/UrWZVJkvFpI/maxresdefault.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        #logo-10 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+        }
+
+        .short-2 {
+            /* border: 2px solid black; */
+            height: 100%;
+            width: 200px;
+        }
+
+        .short-thumbnail-2 {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 350px;
+            width: auto;
+            background-image: url("https://img.youtube.com/vi/IzFAn-1BTGo/maxresdefault.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        #logo-11 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+        }
+
+        .short-3 {
+            /* border: 2px solid black; */
+            height: 100%;
+            width: 200px;
+        }
+
+        .short-thumbnail-3 {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 350px;
+            width: auto;
+            background-image: url("https://img.youtube.com/vi/E7ntZXNgKKQ/maxresdefault.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        #logo-12 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+        }
+
+        .short-4 {
+            /* border: 2px solid black; */
+            height: 100%;
+            width: 200px;
+        }
+
+        .short-thumbnail-4 {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 350px;
+            width: auto;
+            background-image: url("https://img.youtube.com/vi/imy1px59abE/sddefault.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        #logo-13 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+        }
+
+        .short-5 {
+            /* border: 2px solid black; */
+            height: 100%;
+            width: 200px;
+        }
+
+        .short-thumbnail-5 {
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            height: 350px;
+            width: auto;
+            background-image: url("https://img.youtube.com/vi/RNUSor1hQD8/maxresdefault.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        #logo-14 {
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="start">
+
+            <a href="">
+
+                <div class="triple-bar">
+
+                    <img id="triple-bar-icon"
+                        src="https://previews.123rf.com/images/pytyczech/pytyczech1802/pytyczech180200242/96360239-three-bar-line-icon.jpg"
+                        alt="">
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com">
+
+                <div class="youtube-logo">
+
+                    <img id="youtube-logo-icon"
+                        src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg"
+                        alt="">
+
+                </div>
+
+            </a>
+
+        </div>
+
+        <div class="search-box">
+
+            <input id="search-bar" type="text" placeholder="Search">
+
+            <a href="">
+
+                <div id="search-btn">
+
+                    <img id="search-icon"
+                        src="https://p.kindpng.com/picc/s/11-115171_search-icon-vector-png-transparent-png.png" alt="">
+
+                </div>
+
+            </a>
+
+            <a href="">
+
+                <div id="audio-btn">
+
+                    <img id="audio-icon"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcbKn38sKK2rALGs7nP9u6cEEhLXr3Of0PMDCNq6EUv1XFjZAY4DeniqjABl4o1QNSNDA&usqp=CAU"
+                        alt="">
+
+                </div>
+
+            </a>
+
+        </div>
+
+        <div class="end">
+
+
+
+            <a href="">
+
+                <div class="three-dots">
+
+                    <img id="three-dots-icon"
+                        src="https://cdn.icon-icons.com/icons2/2716/PNG/512/dots_three_vertical_icon_173179.png" alt="">
+
+                </div>
+
+            </a>
+
+            <a
+                href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252Fpodcasts&ec=65620&hl=en&ifkv=ASKXGp16FthLVmE6NAMmeAkHqV0ZRPaFf8hShMgCK7nB6q1T21Nbu_IzObs5BqK3jvKQ9LZMjhO4&passive=true&service=youtube&uilel=3&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S2130846573%3A1705511488161854&theme=glif">
+
+                <div class="sign-in">
+
+                    <img id="sing-in-icon"
+                        src="https://cdn2.iconfinder.com/data/icons/basic-thin-line-color/21/15-512.png" alt="">
+
+                    <p>Sign-in</p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="main-body">
+
+        <div class="side-bar">
+
+            <a href="https://www.youtube.com">
+
+                <div class="home">
+
+                    <img id="home-icon" src="https://pixsector.com/cache/59f358af/avfe23a6b11d1ff4752fd.png" alt="">
+
+                    <p style="margin-left: 10px;">Home</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/shorts/CVbYSrX6Ts8">
+
+                <div class="shorts">
+
+                    <img id="shorts-icon"
+                        src="https://i.pinimg.com/originals/17/d2/18/17d21878c22fe49e7e4752eecaa36541.png" alt="">
+
+                    <p style="margin-left: 20px;">Shorts</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/feed/subscriptions">
+
+                <div class="subscriptions">
+
+                    <img id="subscriptions-icon"
+                        src="https://cdn.icon-icons.com/icons2/3237/PNG/512/menu_youtube_social_media_subs_subscription_icon_197393.png"
+                        alt="">
+
+                    <p style="margin-left: 22px;">Subscriptions</p>
+
+                </div>
+
+            </a>
+
+            <hr>
+
+            <a href="https://www.youtube.com/feed/library">
+
+                <div class="library">
+
+                    <img id="library-icon" src="https://cdn-icons-png.flaticon.com/512/2989/2989835.png" alt="">
+
+                    <p style="margin-left: 22px;">Library</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/feed/history">
+
+                <div class="history">
+
+                    <img id="history-icon" src="https://cdn.icon-icons.com/icons2/2440/PNG/512/history_icon_148529.png"
+                        alt="">
+
+                    <p style="margin-left: 22px;">History</p>
+
+                </div>
+
+            </a>
+
+            <hr>
+
+            <div class="explore">
+
+                <p>Explore</p>
+
+            </div>
+
+            <a href="https://www.youtube.com/feed/trending">
+
+                <div class="trending">
+
+                    <img id="trending-icon"
+                        src="https://www.dlf.pt/dfpng/middlepng/583-5836614_fire-png-download-youtube-trending-icon-png-transparent.png"
+                        alt="">
+
+                    <p style="margin-left: 25px;">Trending</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/channel/UCkYQyvc_i9hXEo4xic9Hh2g">
+
+                <div class="shopping">
+
+                    <img id="shopping-icon"
+                        src="https://www.dlf.pt/dfpng/middlepng/216-2164468_playstore-icon-free-download-white-icon-youtube-png.png"
+                        alt="">
+
+                    <p style="margin-left: 25px;">Shopping</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ">
+
+                <div class="music">
+
+                    <img id="music-icon"
+                        src="https://cdn.icon-icons.com/icons2/1416/PNG/512/music-note-single_97768.png" alt="">
+
+                    <p style="margin-left: 25px;">Music</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/feed/storefront">
+
+                <div class="movies">
+
+                    <img id="movies-icon"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDKjbI2mGa7SzaPz85VadmsXJGsZIHlIxdwQ&usqp=CAU"
+                        alt="">
+
+                    <p style="margin-left: 25px;">Movies</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/channel/UC4R8DWoMoI7CAwX8_LjQHig">
+
+                <div class="live">
+
+                    <img id="live-icon" src="https://static-00.iconduck.com/assets.00/live-icon-256x188-ghskp7q3.png"
+                        alt="">
+
+                    <p style="margin-left: 25px;">Live</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/gaming">
+
+                <div class="gaming">
+
+                    <img id="gaming-icon"
+                        src="https://cdn.iconscout.com/icon/free/png-256/free-youtube-gaming-4627159-3853350.png"
+                        alt="">
+
+                    <p style="margin-left: 25px;">Gaming</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/channel/UCYfdidRxbB8Qhf0Nx7ioOYw">
+
+                <div class="news">
+
+                    <img id="news-icon" src="https://static.thenounproject.com/png/1690337-200.png" alt="">
+
+                    <p style="margin-left: 20px;">News</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/channel/UCEgdi0XIXXZ-qJOFPf4JSKw">
+
+                <div class="sports">
+
+                    <img id="sports-icon"
+                        src="https://png.pngtree.com/png-clipart/20191120/original/pngtree-trophy-icon-png-image_5069231.jpg"
+                        alt="">
+
+                    <p style="margin-left: 25px;">Sports</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/channel/UCtFRv9O2AHqOZjjynzrv-xg">
+
+                <div class="learning">
+
+                    <img id="learning-icon" src="https://www.svgrepo.com/show/201886/light-bulb.svg" alt="">
+
+                    <p style="margin-left: 25px;">Learning</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/channel/UCrpQ4p1Ql_hG8rKXIKM1MOQ">
+
+                <div class="fasion-beauty">
+
+                    <img id="fasion-beauty-icon"
+                        src="https://i.pinimg.com/564x/96/b2/85/96b2859582f719c4b20247452031d56d.jpg" alt="">
+
+                    <p style="margin-left: 25px;">Fasion & Beauty</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/podcasts">
+
+                <div class="podcasts">
+
+                    <img id="podcasts-icon"
+                        src="https://w7.pngwing.com/pngs/456/202/png-transparent-podcast-radio-others-logo-radio-station-edit-icon.png"
+                        alt="">
+
+                    <p style="margin-left: 15px;">Podcasts</p>
+
+                </div>
+
+            </a>
+
+            <hr>
+
+            <a href="https://www.youtube.com/feed/guide_builder">
+
+                <div class="browse-channels">
+
+                    <img id="podcasts-icon" src="https://www.svgrepo.com/show/345068/plus-circle.svg" alt="">
+
+                    <p style="margin-left: 15px;">Browse channels</p>
+
+                </div>
+
+            </a>
+
+            <hr>
+
+            <div class="morefromyt">
+
+                <p>More from YouTube</p>
+
+            </div>
+
+            <a href="https://www.youtube.com/premium">
+
+                <div class="youtube-premium">
+
+                    <img id="youtube-premium-icon"
+                        src="https://img.freepik.com/premium-vector/red-youtube-logo-social-media-logo_197792-1803.jpg"
+                        alt="">
+
+                    <p style="margin-left: 15px;">YouTube Premiuim</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://music.youtube.com/" target="_blank">
+
+                <div class="youtube-music">
+
+                    <img id="youtube-music-icon"
+                        src="https://cdn.iconscout.com/icon/free/png-256/free-youtube-music-4062799-3357685.png?f=webp"
+                        alt="">
+
+                    <p style="margin-left: 22px;">YouTube Music</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtubekids.com" target="_blank">
+
+                <div class="youtube-kids">
+
+                    <img id="youtube-kids-icon"
+                        src="https://static.vecteezy.com/system/resources/previews/017/396/821/original/youtube-kids-google-apps-logo-free-png.png"
+                        alt="">
+
+                    <p style="margin-left: 15px;">YouTube Kids</p>
+
+                </div>
+
+            </a>
+
+            <hr>
+
+            <a href="https://www.youtube.com/account">
+
+                <div class="settings">
+
+                    <img id="settings-icon"
+                        src="https://static-00.iconduck.com/assets.00/settings-icon-2048x2046-cw28eevx.png" alt="">
+
+                    <p style="margin-left: 20px;">Settings</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://www.youtube.com/reporthistory">
+
+                <div class="report-history">
+
+                    <img id="report-history-icon" src="https://flyclipart.com/thumb2/flag-icon-466476.png" alt="">
+
+                    <p style="margin-left: 20px;">Report history</p>
+
+                </div>
+
+            </a>
+
+            <a href="https://support.google.com/youtube/community?hl=en&sjid=11899859902158266032-AP" target="_blank">
+
+                <div class="help">
+
+                    <img id="help-icon"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/1024px-Icon-round-Question_mark.svg.png"
+                        alt="">
+
+                    <p style="margin-left: 20px;">Help</p>
+
+                </div>
+
+            </a>
+
+            <a href="">
+
+                <div class="send-feedbak">
+
+                    <img id="send-feedbak-icon"
+                        src="https://icons.veryicon.com/png/o/miscellaneous/heg-main-function-icon/feedback-25.png"
+                        alt="">
+
+                    <p style="margin-left: 20px;">Send feedback</p>
+
+                </div>
+
+            </a>
+
+            <hr>
+
+            <div class="links">
+
+                <a href="">About</a>
+                <a href="">Press</a>
+                <a href="">Copyright</a>
+                <a href="">Contact us</a>
+                <a href="">Creators</a>
+                <a href="">Advertise</a>
+                <a href="">Developers</a>
+
+                <br> <br>
+
+                <a href="">Terms</a>
+                <a href="">Privacy</a>
+                <a href="">Policy & Safety</a>
+                <a href="">How YouTube works</a> <br>
+                <a href="">Test new features</a>
+
+                <br> <br>
+
+                <p>© 2024 Google LLC</p>
+
+            </div>
+
+        </div>
+
+        <div class="body">
+
+            <div class="headlines">
+
+                <a href="https://www.youtube.com">
+                    <div id="all">All</div>
+                </a>
+                <a href="https://www.youtube.com/results?search_query=the+kapil+sharma+show">
+                    <div id="thekapilsharmashow">The Kapil Sharma Show</div>
+                </a>
+                <a href="https://www.youtube.com/results?search_query=ayodhya+ram+mandir">
+                    <div id="ayodhyarammandir">Ayodhya Ram Mandir</div>
+                </a>
+                <a href="https://www.youtube.com/results?search_query=john+cena+vs+undertaker">
+                    <div id="johncenavsundertaker">John Cena vs Undertaker</div>
+                </a>
+                <a href="https://www.youtube.com/results?search_query=the+nun+II+trailer">
+                    <div id="thenunIItrailer">The Nun II Trailer</div>
+                </a>
+                <a href="https://www.youtube.com/results?search_query=bollywood+movies">
+                    <div id="bollywoodmovies">Bollywood Movies</div>
+                </a>
+                <a href="https://www.youtube.com/results?search_query=shark+tank">
+                    <div id="sharktank">Shark Tank</div>
+                </a>
+
+            </div>
+
+            <div class="youtube-videos">
+
+                <div class="video">
+
+                    <a href="https://www.youtube.com/watch?v=F_sZTLoTQik">
+
+                        <div id="thumbnail-1"></div>
+
+                    </a>
+
+                    <div id="details">
+
+                        <div>
+
+                            <a href="https://www.youtube.com/@worldofhitarth">
+
+                                <img class="logo" id="logo-1"
+                                    src="https://yt3.ggpht.com/ytc/AIf8zZTuPmSg_2iDAeNSWOK9A6Oyu1H-iHcfqkjaC539=s800-c-k-c0x00ffffff-no-rj"
+                                    alt="">
+
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <a href="https://www.youtube.com/watch?v=F_sZTLoTQik">
+
+                                <h1 style="font-size: 17px;">Amplifier By HITARTH</h1>
+
+                            </a>
+
+                            <a href="https://www.youtube.com/@worldofhitarth">
+
+                                <p id="channel-name" style="font-size: 12px;">HITARTH</p>
+
+                            </a>
+
+                            <p style="font-size: 12px;">300 views - 8 months ago</p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="video">
+
+                    <a href="https://www.youtube.com/watch?v=jNQXAC9IVRw">
+
+                        <div id="thumbnail-2"></div>
+
+                    </a>
+
+                    <div id="details">
+
+                        <div>
+
+                            <a href="https://www.youtube.com/@jawed">
+
+                                <img class="logo" id="logo-2"
+                                    src="https://yt3.ggpht.com/zi50weT4GiyJxDfb3BpcmjL3BtOmRWE3gwrmeL43j-mGfj0UF4wjbsyE6i-K_I9Bs7dK0SnCQlY=s800-c-k-c0x00ffffff-no-rj"
+                                    alt="">
+
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <a href="https://www.youtube.com/watch?v=jNQXAC9IVRw">
+
+                                <h1 style="font-size: 17px;">Me at the zoo</h1>
+
+                            </a>
+
+                            <a href="https://www.youtube.com/@jawed">
+
+                                <p id="channel-name" style="font-size: 12px;">jawed</p>
+
+                            </a>
+
+                            <p style="font-size: 12px;">303M views - 18 years ago</p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="video">
+
+                    <a href="https://www.youtube.com/watch?v=F_sZTLoTQik">
+
+                        <div id="thumbnail-3"></div>
+
+                    </a>
+
+                    <div id="details">
+
+                        <div>
+
+                            <a href="https://www.youtube.com/@tseries">
+
+                                <img class="logo" id="logo-3"
+                                    src="https://yt3.ggpht.com/XE7Iq8jvJ07ptMc-HxZR_V-2XgXCb0i06i4E_dypl7xSR655WXaQeglfqNuEeuwH3oM9RKVodQ=s800-c-k-c0x00ffffff-no-rj"
+                                    alt="">
+
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <a href="https://www.youtube.com/watch?v=F_sZTLoTQik">
+
+                                <h1 style="font-size: 17px;">Bhool Bhulaiya Full Movie</h1>
+
+                            </a>
+
+                            <a href="https://www.youtube.com/@tseries">
+
+                                <p id="channel-name" style="font-size: 12px;">T-Series</p>
+
+                            </a>
+
+                            <p style="font-size: 12px;">183M views - 1 year ago</p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="video">
+
+                    <a href="https://www.youtube.com/watch?v=WeMJo701mvQ">
+
+                        <div id="thumbnail-4"></div>
+
+                    </a>
+
+                    <div id="details">
+
+                        <div>
+
+                            <a href="https://www.youtube.com/@zeetv">
+
+                                <img class="logo" id="logo-4"
+                                    src="https://yt3.ggpht.com/ytc/AIf8zZToCeMrRqeKFCkLGJ3t3SgvxUozYBde_aWKQmembQ=s800-c-k-c0x00ffffff-no-rj"
+                                    alt="">
+
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <a href="https://www.youtube.com/watch?v=WeMJo701mvQ">
+
+                                <h1 style="font-size: 17px;">12th Fail - Official Trailer</h1>
+
+                            </a>
+
+                            <a href="https://www.youtube.com/@zeetv">
+
+                                <p id="channel-name" style="font-size: 12px;">Zee TV</p>
+
+                            </a>
+
+                            <p style="font-size: 12px;">10M views - 3 months ago</p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="video">
+
+                    <a href="https://www.youtube.com/watch?v=kA2kT-TFXM8">
+
+                        <div id="thumbnail-5"></div>
+
+                    </a>
+
+                    <div id="details">
+
+                        <div>
+
+                            <a href="https://www.youtube.com/@SandeepSeminars">
+
+                                <img class="logo" id="logo-5"
+                                    src="https://yt3.ggpht.com/W-LbQKXkf3HJsvau1PC8jnOoryI_7AjdGGORmmpWUO4Bdb3Alem-X4fasmV43aRXRydCy3gyAig=s800-c-k-c0x00ffffff-no-rj"
+                                    alt="">
+
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <a href="https://www.youtube.com/watch?v=kA2kT-TFXM8">
+
+                                <h1 style="font-size: 17px;">UPSC Coaching Reality</h1>
+
+                            </a>
+
+                            <a href="https://www.youtube.com/@SandeepSeminars">
+
+                                <p id="channel-name" style="font-size: 12px;">Sandeep Maheshwari</p>
+
+                            </a>
+
+                            <p style="font-size: 12px;">2.1M views - 3 days ago</p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="video">
+
+                    <a href="https://www.youtube.com/watch?v=0n7Hv2WApT0">
+
+                        <div id="thumbnail-6"></div>
+
+                    </a>
+
+                    <div id="details">
+
+                        <div>
+
+                            <a href="https://www.youtube.com/@BBCHindi">
+
+                                <img class="logo" id="logo-6"
+                                    src="https://yt3.ggpht.com/ytc/AIf8zZRP8Bka2rItG04kBk_te2cVJ6i0XtuuE0tEj5bHgFw=s800-c-k-c0x00ffffff-no-rj"
+                                    alt="">
+
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <a href="https://www.youtube.com/watch?v=0n7Hv2WApT0">
+
+                                <h1 style="font-size: 17px;">Ram Mandir Ayodhya (BBC Hindi)</h1>
+
+                            </a>
+
+                            <a href="https://www.youtube.com/@BBCHindi">
+
+                                <p id="channel-name" style="font-size: 12px;">BBC Hindi</p>
+
+                            </a>
+
+                            <p style="font-size: 12px;">196K views - 1 day ago</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="video">
+
+                    <a href="https://www.youtube.com/watch?v=tm24mst63f8">
+
+                        <div id="thumbnail-7"></div>
+
+                    </a>
+
+                    <div id="details">
+
+                        <div>
+
+                            <a href="https://www.youtube.com/@lazyrabbit-">
+
+                                <img class="logo" id="logo-7"
+                                    src="https://yt3.ggpht.com/AWqENKQXWdagbxLYJZJWikGogiZ2xOvBsxcPCz2G2-uNdIvljKOSzp8OVg4F0bU6X4guICbI=s800-c-k-c0x00ffffff-no-rj"
+                                    alt="">
+
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <a href="https://www.youtube.com/watch?v=tm24mst63f8">
+
+                                <h1 style="font-size: 17px;">What if a child gives you flowers?</h1>
+
+                            </a>
+
+                            <a href="https://www.youtube.com/@lazyrabbit-">
+
+                                <p id="channel-name" style="font-size: 12px;">Lazy Rabbit - 레이지 래빗</p>
+
+                            </a>
+
+                            <p style="font-size: 12px;">613K views - 7 months ago</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="video">
+
+                    <a href="https://www.youtube.com/watch?v=J4aRcs66Nlo">
+
+                        <div id="thumbnail-8"></div>
+
+                    </a>
+
+                    <div id="details">
+
+                        <div>
+
+                            <a href="https://www.youtube.com/@Mrwhosetheboss">
+
+                                <img class="logo" id="logo-8"
+                                    src="https://yt3.ggpht.com/enyLBm1Sy8mVRXJJLWHT2z64nqxJGt2g61A9xnxpUjO2YAUovHaY_JT3rnAg0j6Qij9iaHQlAg=s800-c-k-c0x00ffffff-no-rj"
+                                    alt="">
+
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <a href="https://www.youtube.com/watch?v=J4aRcs66Nlo">
+
+                                <h1 style="font-size: 17px;">Samsung S24 Ultra (Galaxy AI)</h1>
+
+                            </a>
+
+                            <a href="https://www.youtube.com/@Mrwhosetheboss">
+
+                                <p id="channel-name" style="font-size: 12px;">Mrwhosetheboss</p>
+
+                            </a>
+
+                            <p style="font-size: 12px;">4.6M views - 1 day ago</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="video">
+
+                    <a href="https://www.youtube.com/watch?v=es2krnRZ2Ko">
+
+                        <div id="thumbnail-9"></div>
+
+                    </a>
+
+                    <div id="details">
+
+                        <div>
+
+                            <a href="https://www.youtube.com/@YesFunnyYes">
+
+                                <img class="logo" id="logo-9"
+                                    src="https://yt3.ggpht.com/ytc/AIf8zZSAYZQePKb3Osq5e9g-L2ocgjs3f3MdXhDr43Harg=s800-c-k-c0x00ffffff-no-rj"
+                                    alt="">
+
+                            </a>
+
+                        </div>
+
+                        <div>
+
+                            <a href="https://www.youtube.com/watch?v=es2krnRZ2Ko">
+
+                                <h1 style="font-size: 17px;">Funniest Airport Prank</h1>
+
+                            </a>
+
+                            <a href="https://www.youtube.com/@YesFunnyYes">
+
+                                <p id="channel-name" style="font-size: 12px;">YesFunnyYes</p>
+
+                            </a>
+
+                            <p style="font-size: 12px;">37M views - 6 years ago</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="youtube-shorts">
+
+                    <div class="short-1">
+
+                        <a href="https://www.youtube.com/shorts/UrWZVJkvFpI">
+
+                            <div class="short-thumbnail-1"></div>
+
+                        </a>
+
+                        <div class="info">
+
+                            <div class="info-1">
+
+                                <a href="https://www.youtube.com/@readersdigest">
+
+                                    <img class="logo" id="logo-10"
+                                        src="https://yt3.ggpht.com/rU9j_xbsUsPqJ2Us2ZCuQuJXI9MEZxBCDvp_VKxJICV069xlg6q06KTokYpzyjn3qzaKc0RHKkE=s800-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+
+                                </a>
+
+                                <a href="https://www.youtube.com/@readersdigest">
+
+                                    <p id="channel-name" style="font-size: 12px;">@readersdigest</p>
+
+                                </a>
+
+                            </div>
+
+                            <div class="info-2">
+
+                                <a href="https://www.youtube.com/shorts/UrWZVJkvFpI">
+
+                                    <h1 style="font-size: 15px;">Adorable Baby Boy Cuddles on Nurse</h1>
+
+                                </a>
+
+                                <p style="font-size: 12px;">53M views</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="short-2">
+
+                        <a href="https://www.youtube.com/shorts/IzFAn-1BTGo">
+
+                            <div class="short-thumbnail-2"></div>
+
+                        </a>
+
+                        <div class="info">
+
+                            <div class="info-1">
+
+                                <a href="https://www.youtube.com/@Chipmunksandfriends">
+
+                                    <img class="logo" id="logo-11"
+                                        src="https://yt3.ggpht.com/SpNuTavk9AMylZ-nCl7mLQITG4OIrrbNOyfHLv1ruiyEHiJyi7B3kLRW-ZstqsSmDoV70DGJxQ=s800-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+
+                                </a>
+
+                                <a href="https://www.youtube.com/@Chipmunksandfriends">
+
+                                    <p id="channel-name" style="font-size: 12px;">@Chipmunksandfriends</p>
+
+                                </a>
+
+                            </div>
+
+                            <div class="info-2">
+
+                                <a href="https://www.youtube.com/shorts/IzFAn-1BTGo">
+
+                                    <h1 style="font-size: 15px;">The cute chipmunk is eating peanuts</h1>
+
+                                </a>
+
+                                <p style="font-size: 12px;">13M views</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="short-3">
+
+                        <a href="https://www.youtube.com/shorts/E7ntZXNgKKQ">
+
+                            <div class="short-thumbnail-3"></div>
+
+                        </a>
+
+                        <div class="info">
+
+                            <div class="info-1">
+
+                                <a href="https://www.youtube.com/@gzfoodqood-kt8qf">
+
+                                    <img class="logo" id="logo-12"
+                                        src="https://yt3.ggpht.com/TFbpvBDFhoUcOg5MNdVosdNy63LRT1IyFaZntocmf48f7dIZJgrThiIM9mChzEdU6YWE7FTi9A=s800-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+
+                                </a>
+
+                                <a href="https://www.youtube.com/@gzfoodqood-kt8qf">
+
+                                    <p id="channel-name" style="font-size: 12px;">@gzfoodqood</p>
+
+                                </a>
+
+                            </div>
+
+                            <div class="info-2">
+
+                                <a href="https://www.youtube.com/shorts/E7ntZXNgKKQ">
+
+                                    <h1 style="font-size: 15px;">The perfect sandwich to take to the beach</h1>
+
+                                </a>
+
+                                <p style="font-size: 12px;">390 views</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="short-4">
+
+                        <a href="https://www.youtube.com/shorts/UrWZVJkvFpI">
+
+                            <div class="short-thumbnail-4"></div>
+
+                        </a>
+
+                        <div class="info">
+
+                            <div class="info-1">
+
+                                <a href="https://www.youtube.com/@RMVideos_Jukin">
+
+                                    <img class="logo" id="logo-13"
+                                        src="https://yt3.ggpht.com/NeqGJZE1HMuhoN9CrfX4Ry8Ns8kS41hfFJY0KzfOJjYDzZzvcyUH28Bfkyr3IPlkPjz6jGX5bw=s800-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+
+                                </a>
+
+                                <a href="https://www.youtube.com/@RMVideos_Jukin">
+
+                                    <p id="channel-name" style="font-size: 12px;">@RMVideos_Jukin</p>
+
+                                </a>
+
+                            </div>
+
+                            <div class="info-2">
+
+                                <a href="https://www.youtube.com/shorts/UrWZVJkvFpI">
+
+                                    <h1 style="font-size: 15px;">Dad Outsmarts Daughter</h1>
+
+                                </a>
+
+                                <p style="font-size: 12px;">20M views</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="short-5">
+
+                        <a href="https://www.youtube.com/shorts/RNUSor1hQD8">
+
+                            <div class="short-thumbnail-5"></div>
+
+                        </a>
+
+                        <div class="info">
+
+                            <div class="info-1">
+
+                                <a href="https://www.youtube.com/@emerald0rtiz">
+
+                                    <img class="logo" id="logo-14"
+                                        src="https://yt3.ggpht.com/tETZ9KaqOT_nrFTPhmyOt4LkjSp1PsbLrUQcAm_chMVYc82fxjMiW4ebL58-fySOJYdgDXRk=s800-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+
+                                </a>
+
+                                <a href="https://www.youtube.com/@emerald0rtiz">
+
+                                    <p id="channel-name" style="font-size: 12px;">@emerald0rtiz</p>
+
+                                </a>
+
+                            </div>
+
+                            <div class="info-2">
+
+                                <a href="https://www.youtube.com/shorts/RNUSor1hQD8">
+
+                                    <h1 style="font-size: 15px;">Shakira live performance</h1>
+
+                                </a>
+
+                                <p style="font-size: 12px;">9.3M views</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
